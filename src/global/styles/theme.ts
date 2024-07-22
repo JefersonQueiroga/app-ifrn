@@ -7,4 +7,5 @@ export const theme = {
         background:"#f5f5f5",
         title:"#333",
     },
-}
+};
+

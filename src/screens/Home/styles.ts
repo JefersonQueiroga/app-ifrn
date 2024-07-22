@@ -2,8 +2,14 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
     flex: 1;
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.primary };
     align-items: center;
+`;
+
+export const FormView = styled.View`
+    width: 70%;
+    height: 200px;  
+    justify-content: space-around;
 `;
 
 export const Title = styled.Text`
