@@ -3,8 +3,13 @@ import { Container, Title, Logo, FormView} from "./styles";
 import ifrn from "../../assets/ifrn.png";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
+import { useNavigation } from '@react-navigation/native'
+import {StactTypes} from "../../routes";
 
-export default function Home() {
+export default function Home(){
+
+  const navigation = useNavigation<StactTypes>();
+
   return(
     <Container>
       <Logo source={ifrn} />
@@ -12,7 +17,7 @@ export default function Home() {
            <FormView>
               <Input placeholder="Login"/>
               <Input placeholder="Senha"/>
-              <Button/>
+              <Button onPress={() => navigation.navigate("Task")}/>
            </FormView>
     </Container>
   ) 
