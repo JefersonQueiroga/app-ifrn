@@ -4,7 +4,7 @@ import ifrn from "../../assets/ifrn.png";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import { useNavigation } from '@react-navigation/native'
-import {StactTypes} from "../../routes";
+import {StactTypes} from "../../routes/stack";
 
 export default function Home(){
 

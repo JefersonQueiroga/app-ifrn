@@ -2,9 +2,9 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator, NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-import Home from "../screens/Home";
-import Task from '../screens/Task';
-import Pagina2 from '../screens/Pagina2';
+import Home from "../../screens/Home";
+import Task from '../../screens/Task';
+import Pagina2 from '../../screens/Pagina2';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +16,7 @@ type StackNavigator = {
 
 export type StactTypes = NativeStackNavigationProp<StackNavigator>;
 
-export function Routes(){
+export function StackComponent(){
   
   return(
     <NavigationContainer>
