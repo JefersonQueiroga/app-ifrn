@@ -3,7 +3,8 @@
     "name": "app-ifrn",
     "slug": "app-ifrn",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "app-ifrn",
+    "scheme": "telabrasil",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
