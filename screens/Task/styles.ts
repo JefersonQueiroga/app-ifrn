@@ -10,7 +10,7 @@ export const TitleMain = styled.Text`
     margin-top: 100px;
     font-size: 26px;
     font-weight: bold;
-    color: ${({ theme }) => theme.colors.primary};
+    color: #1DB863;
 `;
 
 export const FormStyle = styled.View`

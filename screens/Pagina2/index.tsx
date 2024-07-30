@@ -1,7 +1,6 @@
 import React from 'react';
-import { Container,Header,TitleMain,TextSimple } from './styles';
-import ItemList from '../../components/ItemList';
-
+import { Container, Header, TitleMain, TextSimple} from './styles'
+import ItemList from '../../components/ItemList'
 export default function App() {
   return (
     <Container>

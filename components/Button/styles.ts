@@ -6,7 +6,7 @@ interface StyledButtonProps {
 
 
 export const StyledButton = styled.TouchableOpacity<StyledButtonProps>`
-    background-color: ${({ add,theme }) => add ? theme.colors.primary : '#666666'};
+    background-color: ${props => (props.add ? '#1DB863' : '#333333')};
     width: 100%;
     height: 45px;
     align-items: center;

@@ -7,15 +7,17 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
+          headerShown: false,
+          title: 'Registrar Tarefas',
+          tabBarIcon: ({ color }) => <FontAwesome size={28} name="check-square-o" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="settings"
+        name="lista"
         options={{
-          title: 'Settings',
-          tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
+          headerShown: false,
+          title: 'Lista de Tarefas',
+          tabBarIcon: ({ color }) => <FontAwesome size={28} name="list-ul" color={color} />,
         }}
       />
     </Tabs>
