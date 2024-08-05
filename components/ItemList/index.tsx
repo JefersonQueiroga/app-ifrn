@@ -5,10 +5,11 @@ import EvilIcons from '@expo/vector-icons/EvilIcons';
 
 interface PropsButton extends TouchableOpacityProps {
   checkedItem?: boolean;
+  text?: string;
 }
 
 
-export default function ItemList({checkedItem,...rest}:PropsButton) {
+export default function ItemList({checkedItem,text,...rest}:PropsButton) {
   const [checked, setChecked] = useState(false);
   
   function handlePress() {
@@ -21,7 +22,7 @@ export default function ItemList({checkedItem,...rest}:PropsButton) {
         <ItemCheck>
               <Check checkedItem={checked} onPress={handlePress}></Check>
         </ItemCheck>
-        <ItemText>Arrumar a cama</ItemText>
+        <ItemText>{text}</ItemText>
        </ItemGroup>
 
        <EvilIcons name="trash" size={30} color="black" />

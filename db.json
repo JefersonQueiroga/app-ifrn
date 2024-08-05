@@ -1,0 +1,39 @@
+{
+  "tarefas": [
+    {
+      "id": "1",
+      "nome_tarefa": "Estudar React Native",
+      "descricao": "Completar o tutorial sobre React Native no Expo.",
+      "data": "2024-08-03",
+      "feita": false
+    },
+    {
+      "id": "2",
+      "nome_tarefa": "Desenvolver API",
+      "descricao": "Criar uma API RESTful utilizando Django REST Framework.",
+      "data": "2024-08-05",
+      "feita": true
+    },
+    {
+      "id": "3",
+      "nome_tarefa": "Testar JSON Server",
+      "descricao": "Configurar o JSON Server e integrar com o projeto React Native.",
+      "data": "2024-08-07",
+      "feita": false
+    },
+    {
+      "id": "4a4d",
+      "nome_tarefa": "teste",
+      "descricao": "teste",
+      "data": "2024-07-20",
+      "feita": false
+    },
+    {
+      "id": "7b00",
+      "nome_tarefa": "Jeferson",
+      "descricao": "tedf",
+      "data": "2024-07-20",
+      "feita": false
+    }
+  ]
+}
