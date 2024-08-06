@@ -12,7 +12,7 @@
       "nome_tarefa": "Desenvolver API",
       "descricao": "Criar uma API RESTful utilizando Django REST Framework.",
       "data": "2024-08-05",
-      "feita": true
+      "feita": false
     },
     {
       "id": "3",
@@ -25,13 +25,6 @@
       "id": "4a4d",
       "nome_tarefa": "teste",
       "descricao": "teste",
-      "data": "2024-07-20",
-      "feita": false
-    },
-    {
-      "id": "7b00",
-      "nome_tarefa": "Jeferson",
-      "descricao": "tedf",
       "data": "2024-07-20",
       "feita": false
     }

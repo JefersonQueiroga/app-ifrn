@@ -26,7 +26,7 @@ export async function createTarefa(newTarefa: Omit<Tarefa, 'id'>): Promise<Taref
 }
 
 // Função para atualizar um todo
-export async function updateTodo(id: number, updatedTodo: Partial<Tarefa>): Promise<Tarefa> {
+export async function updateTarefa(id: number, updatedTodo: Partial<Tarefa>): Promise<Tarefa> {
   const response: AxiosResponse<Tarefa> = await api.put(`/tarefas/${id}`, updatedTodo);
   return response.data;
 }
@@ -34,4 +34,9 @@ export async function updateTodo(id: number, updatedTodo: Partial<Tarefa>): Prom
 // Função para deletar um todo
 export async function deleteTarefas(id: number): Promise<void> {
   await api.delete(`/tarefas/${id}`);
+}
+
+export async function updateTarefaFeita(id: number, feita: boolean): Promise<Tarefa> {
+  const response: AxiosResponse<Tarefa> = await api.patch(`/tarefas/${id}`, { feita });
+  return response.data;
 }

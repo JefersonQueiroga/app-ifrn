@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Header, TitleMain, TextSimple} from './styles'
 import ItemList from '../../components/ItemList'
 import { Tarefa } from '../../types/Tarefa';
-import { getTarefas,deleteTarefas } from '../../services/TarefaService';
+import { getTarefas,deleteTarefas,updateTarefaFeita } from '../../services/TarefaService';
 import { FlatList, ListRenderItemInfo } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 
@@ -18,6 +18,17 @@ export default function ListaTarefas() {
       setTarefas((prevTarefas) => prevTarefas.filter(tarefa => tarefa.id !== id));
     } catch (error) {
       console.error('Erro ao deletar tarefa:', error);
+    }
+  }
+
+  async function handleCheck(id: number, checked: boolean) {
+    try {
+      await updateTarefaFeita(id, checked); // Chama a função de serviço para atualizar o check
+      setTarefas((prevTarefas) => prevTarefas.map(tarefa => 
+        tarefa.id === id ? { ...tarefa, checked: checked } : tarefa
+      ));
+    } catch (error) {
+      console.error('Erro ao atualizar tarefa:', error);
     }
   }
 
@@ -46,6 +57,8 @@ export default function ListaTarefas() {
           <ItemList 
             id={item.id} 
             text={item.nome_tarefa} 
+            checkedItem={item.feita}
+            onCheck={handleCheck}
             onDelete={handleDelete} // Passa a função de deleção como prop
           />
         )}

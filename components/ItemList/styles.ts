@@ -4,6 +4,10 @@ interface PropsButton {
   checkedItem?: boolean;
 }
 
+interface PropsCheck{
+  checkedItem?: boolean;
+}
+
 export const ItemView = styled.View`
   padding: 15px;
   font-size: 16px;
@@ -18,10 +22,11 @@ export const ItemView = styled.View`
   
 `;
 
-export const ItemText = styled.Text`
+export const ItemText = styled.Text<PropsCheck>`
   font-size: 16px; 
   color:    #666666;
   margin-left: 10px;
+  text-decoration-line: ${(props) => (props.checkedItem ? 'line-through' : 'none')};
 `;
 
 export const ItemCheck = styled.View`

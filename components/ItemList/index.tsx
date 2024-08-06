@@ -8,23 +8,26 @@ interface PropsButton  {
   text?: string;
   id: number;
   onDelete: (id: number) => Promise<void>;
+  onCheck: (id: number, checked: boolean) => Promise<void>;
 }
 
 
-export default function ItemList({checkedItem,text,id,onDelete}:PropsButton) {
+export default function ItemList({checkedItem,text,id,onDelete,onCheck }:PropsButton) {
   const [checked, setChecked] = useState(false);
   
-  function handlePress() {
-    setChecked(!checked);
-  };
+  async function handleCheck() {
+    const newCheckedState = !checked;
+    setChecked(newCheckedState);
+    await onCheck(id,newCheckedState)
+  }
 
   return(
     <ItemView>
       <ItemGroup>
         <ItemCheck>
-              <Check checkedItem={checked} onPress={handlePress}></Check>
+              <Check checkedItem={checkedItem} onPress={handleCheck}></Check>
         </ItemCheck>
-        <ItemText>{text}</ItemText>
+        <ItemText checkedItem={checkedItem}>{text}</ItemText>
        </ItemGroup>
        <ButtonDelete onPress={() => onDelete(id)}>
           <EvilIcons name="trash" size={30} color="black" />
