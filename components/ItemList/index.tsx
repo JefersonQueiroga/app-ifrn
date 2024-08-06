@@ -1,15 +1,17 @@
 import React,{ useState }  from "react";
-import { ItemView,ItemText,ItemCheck,Check,ItemGroup } from "./styles";
+import { ItemView,ItemText,ItemCheck,Check,ItemGroup,ButtonDelete } from "./styles";
 import { TouchableOpacityProps } from "react-native";
 import EvilIcons from '@expo/vector-icons/EvilIcons';
 
-interface PropsButton extends TouchableOpacityProps {
+interface PropsButton  {
   checkedItem?: boolean;
   text?: string;
+  id: number;
+  onDelete: (id: number) => Promise<void>;
 }
 
 
-export default function ItemList({checkedItem,text,...rest}:PropsButton) {
+export default function ItemList({checkedItem,text,id,onDelete}:PropsButton) {
   const [checked, setChecked] = useState(false);
   
   function handlePress() {
@@ -24,9 +26,9 @@ export default function ItemList({checkedItem,text,...rest}:PropsButton) {
         </ItemCheck>
         <ItemText>{text}</ItemText>
        </ItemGroup>
-
-       <EvilIcons name="trash" size={30} color="black" />
-
+       <ButtonDelete onPress={() => onDelete(id)}>
+          <EvilIcons name="trash" size={30} color="black" />
+       </ButtonDelete>
     </ItemView>    
     )
 }

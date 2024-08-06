@@ -45,3 +45,7 @@ export const ItemGroup = styled.View`
   align-items: center;
 `;
 
+export const ButtonDelete = styled.TouchableOpacity`
+  width: 30px;
+  height: 30px;
+`;

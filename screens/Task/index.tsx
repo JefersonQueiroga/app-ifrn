@@ -3,10 +3,14 @@ import { Container,TitleMain,FormStyle } from "./styles";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import {createTarefa} from "../../services/TarefaService";
+import { useRouter } from 'expo-router';
+
+
 export default function Task() {
   const [nome, setNome] = useState<string>("");
   const [descricao, setDescricao] = useState<string>("");
   const [data, setData] = useState<string>("");
+  const router = useRouter(); // Hook para navegar entre as telas
 
   function handlePress() {
     console.log("Nome:", nome);
@@ -17,6 +21,7 @@ export default function Task() {
     setDescricao("");
     setData("");
     alert("Tarefa cadastrada com sucesso!");
+    router.push('/lista');
   }
 
     return(
